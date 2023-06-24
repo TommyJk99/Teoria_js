@@ -197,3 +197,92 @@ switch(color){
 
 //FUNCTIONS --------------------------------
 
+function addNums(num1, num2){ 
+    console.log(num1 + num2);
+}
+/*function addNums(num1 = 2, num2 = 2){ 
+    console.log(num1 + num2);
+}
+
+addNums(); --> doing this avoid the NaN and it returns 4
+addNums(4,5); --> this is still 9
+*/
+function addNums(num1, num2){ 
+    console.log(num1 + num2);
+}
+
+addNums(56,6) //i recall the function  above
+
+//another way to do this is with the arrow function
+
+const addNums2 = (num1, num2) => num1 + num2;
+console.log(addNums2(56,2))
+
+//the arrow function are useful for example with the for each, map and filter
+
+todos.forEach((todo) => console.log(todo));
+/*this was the old one
+todos.forEach(function(todo) {
+    console.log(todo.isCompleted, todo.text);
+})*/
+
+//instantiate an object with the constructor function AND prototype
+
+function Person1(firstName, lastName, age){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.getName = function(){
+        return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+const john = new Person1("John", "Doe", 30);
+const carlos = new Person1("Carlos", "Rodriguez", 29);
+
+console.log(john);
+console.log(carlos.lastName);
+
+const date = new Date(); //the "new" is used to create a new object
+console.log(date.getMonth());
+
+console.log(john.getName())//in questo modo uso la funzione dentro la funzione
+/*doing this is not the best way to do this, i don't want every function to be executed so 
+we can use the prototypes*/
+/* instead of this:
+function Person(firstName, lastName, age){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.getName = function(){
+        return `${this.firstName} ${this.lastName}`;
+  }
+} WE CAN DO THIS!!!!!!!!!!!:
+function Person(firstName, lastName, age){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+  Person.prototype.getFullName = function(){
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  console.log(Person.prototype.getFullName())  così evito di avere le funzioni all'interno dell'oggetto
+*/ 
+
+//CLASSES, a prettier way to do all the stuff above-----------------------------------
+//instead of using the object and the prototype, we can use the classes
+
+class Person {
+    constructor(firstName, lastName, age){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+      }
+    getName(){
+            return `${this.firstName} ${this.lastName}`;
+      }
+    }
+const maria = new Person("Maria", "Perez", 29);
+console.log(maria.getName());
+
