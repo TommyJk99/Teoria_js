@@ -6,11 +6,11 @@ const age = 30
 const isActive = true
 const rating = 4.5
 const x1 = null;
-const y = undefined;
+const y1 = undefined;
 let z;
 const s = "technology, computers, it, code";
 
-console.log(typeof name, typeof age, typeof isActive, typeof rating, typeof x1, typeof y, typeof z);
+console.log(typeof name, typeof age, typeof isActive, typeof rating, typeof x1, typeof y1, typeof z);
 console.log("My name is " + name + " and I am " + age + " years old.");
 //un altro modo per farlo è usare le template strings ma dove trovo sto schifo di barrette{}
 console.log(`My name is ${name} and I am ${age} years old.`);
@@ -158,4 +158,42 @@ console.log(todoCompleted);
 //CONDITIONALS -----------------------------------
 
 const x = 10;
+const y = 10;
+//different betwen == and ===
+if(x == 10){
+    console.log("x is equal to 10");
+}
+
+if(x === '10'){
+    console.log("x isequal to 10");
+} else {
+    console.log("x is not equal to 10");
+}
+
+if (x>10 && y<10){
+    console.log("x is greater than 10 and y is less than 10");
+} 
+
+if (x>10 || y<=10){
+    console.log("x is greater than 10 or y is less than 10");
+} 
+
+const color = x>10 ? "red" : "blue"; //this tells me that if x is greater than 10 then color is red else color is blue
+console.log(color);
+
+//SWITCHES -----------------------------------
+
+switch(color){
+    case "red": 
+      console.log("color is red");
+      break;
+    case "blue":
+      console.log("color is blue");
+      break;
+    default: 
+      console.log("color is not red or blue");
+    break
+}
+
+//FUNCTIONS --------------------------------
 
